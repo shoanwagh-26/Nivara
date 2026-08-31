@@ -1,15 +1,17 @@
 version: 1
 
 frontend:
+  buildPath: /
+
   phases:
     preBuild:
       commands:
-        - cd frontend && npm ci
-        - cd ../backend && npm ci
+        - npm ci --prefix frontend
+        - npm ci --prefix backend
 
     build:
       commands:
-        - cd frontend && npm run build
+        - npm run build --prefix frontend
 
     postBuild:
       commands:
