@@ -1,0 +1,21 @@
+version: 1
+
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - cd frontend && npm ci
+        - cd ../backend && npm ci
+
+    build:
+      commands:
+        - cd frontend && npm run build
+
+    postBuild:
+      commands:
+        - bash ./bin/postbuild.sh
+
+  artifacts:
+    baseDirectory: .amplify-hosting
+    files:
+      - '**/*'
