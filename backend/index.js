@@ -26,6 +26,7 @@ app.use(
             const allowedOrigins = [
                 "http://localhost:3000",
                 "http://localhost:3001",
+                "https://master.d3k7u0ong29c6t.amplifyapp.com",
             ];
 
             if (!origin || allowedOrigins.includes(origin)) {
