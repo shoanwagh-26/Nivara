@@ -8,10 +8,12 @@ frontend:
       commands:
         - npm ci --prefix frontend
         - npm ci --prefix backend
+        - npm ci --prefix dashboard
 
     build:
       commands:
         - npm run build --prefix frontend
+        - npm run build --prefix dashboard
 
     postBuild:
       commands:
