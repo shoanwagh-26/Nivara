@@ -1,3 +1,5 @@
+
+
 {
   "version": 1,
   "framework": {
@@ -10,12 +12,11 @@
       "target": {
         "kind": "Static",
         "cacheControl": "public, max-age=2"
-    },
-      "fallback": 
-    {
+      },
+      "fallback": {
         "kind": "Compute",
         "src": "default"
-    }
+      }
     },
     {
       "path": "/*",

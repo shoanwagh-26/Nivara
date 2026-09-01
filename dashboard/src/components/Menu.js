@@ -8,7 +8,7 @@ const Menu = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3002/auth/check", {
+    fetch("/auth/check", {
         credentials: "include"
     })
         .then((res) => res.json())
@@ -32,12 +32,12 @@ const Menu = () => {
 
 const handleLogout = async () => {
     try {
-        await fetch("http://localhost:3002/logout", {
+        await fetch("/logout", {
             method: "POST",
             credentials: "include",
         });
 
-        window.location.href = "http://localhost:3000/";;
+        window.location.href = "/";;
     } catch (error) {
         console.error("Logout failed:", error);
     }

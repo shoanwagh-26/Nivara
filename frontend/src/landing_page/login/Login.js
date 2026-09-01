@@ -12,7 +12,7 @@ function Login() {
         e.preventDefault();
         setError("");
         try {
-            const response = await fetch("http://localhost:3002/login", {
+            const response = await fetch("/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -29,7 +29,7 @@ function Login() {
                 return;
             }
            // Login successful
-            window.location.href = "http://localhost:3001/";
+            window.location.href = "/";
         } catch (error) {
             console.error(error);
             setError("Unable to connect to server");

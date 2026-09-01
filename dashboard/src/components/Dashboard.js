@@ -17,7 +17,7 @@ const Dashboard = () => {
     const [user, setUser] = useState(null);
 
     useEffect(() => {
-        fetch("http://localhost:3002/auth/check", {
+        fetch("/auth/check", {
             credentials: "include",
         })
             .then((res) => {
@@ -43,7 +43,7 @@ const Dashboard = () => {
     }
 
     if (!authenticated) {
-       window.location.href = "http://localhost:3000/login";
+       window.location.href = "/login";
         return null;
     }
 
