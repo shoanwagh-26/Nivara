@@ -10,8 +10,7 @@
     {
       "path": "/*.*",
       "target": {
-        "kind": "Static",
-        "cacheControl": "public, max-age=2"
+        "kind": "Static"
       },
       "fallback": {
         "kind": "Compute",
