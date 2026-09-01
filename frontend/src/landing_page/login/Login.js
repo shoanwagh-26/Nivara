@@ -29,7 +29,7 @@ function Login() {
                 return;
             }
            // Login successful
-            window.location.href = "/";
+            window.location.href = "/dashboard/";
         } catch (error) {
             console.error(error);
             setError("Unable to connect to server");
