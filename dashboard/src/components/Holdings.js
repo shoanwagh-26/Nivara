@@ -10,7 +10,7 @@ const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
 
 useEffect(() => {
-    axios.get("/allHoldings").then((res) => {
+    axios.get("http://localhost:3002/allHoldings").then((res) => {
 
         const formattedHoldings = res.data.map((stock) => {
 

@@ -8,9 +8,9 @@ const Menu = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    fetch("/auth/check", {
-        credentials: "include"
-    })
+      fetch("http://localhost:3002/auth/check", {
+      credentials: "include"
+      })
         .then((res) => res.json())
         .then((data) => {
             if (data.authenticated) {
@@ -32,7 +32,7 @@ const Menu = () => {
 
 const handleLogout = async () => {
     try {
-        await fetch("/logout", {
+        await fetch("http://localhost:3002/logout", {
             method: "POST",
             credentials: "include",
         });

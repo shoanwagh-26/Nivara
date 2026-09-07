@@ -22,7 +22,7 @@ function Signup() {
         }
 
         try {
-            const response = await fetch("/signup", {
+            const response = await fetch("http://localhost:3002/signup", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -72,7 +72,6 @@ function Signup() {
                             <label className="form-label">
                                 Name
                             </label>
-
                             <input
                                 type="text"
                                 className="form-control"
@@ -81,12 +80,10 @@ function Signup() {
                                 required
                             />
                         </div>
-
                         <div className="mb-3">
                             <label className="form-label">
                                 Email
                             </label>
-
                             <input
                                 type="email"
                                 className="form-control"
@@ -95,12 +92,10 @@ function Signup() {
                                 required
                             />
                         </div>
-
                         <div className="mb-3">
                             <label className="form-label">
                                 Password
                             </label>
-
                             <input
                                 type="password"
                                 className="form-control"
@@ -109,12 +104,10 @@ function Signup() {
                                 required
                             />
                         </div>
-
                         <div className="mb-3">
                             <label className="form-label">
                                 Confirm Password
                             </label>
-
                             <input
                                 type="password"
                                 className="form-control"
@@ -125,20 +118,17 @@ function Signup() {
                                 required
                             />
                         </div>
-
                         {error && (
                             <p className="text-danger">
                                 {error}
                             </p>
                         )}
-
                         <button
                             type="submit"
                             className="btn btn-primary w-100"
                         >
                             Create Account
                         </button>
-
                     </form>
 
                 </div>

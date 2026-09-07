@@ -11,8 +11,9 @@ function Login() {
     const handleLogin = async (e) => {
         e.preventDefault();
         setError("");
+
         try {
-            const response = await fetch("/login", {
+            const response = await fetch("http://localhost:3002/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -23,13 +24,17 @@ function Login() {
                     password,
                 }),
             });
+
             const data = await response.text();
+
             if (!response.ok) {
                 setError(data);
                 return;
             }
-           // Login successful
-            window.location.href = "/dashboard/";
+
+            // Login successful
+            window.location.href = "http://localhost:3001/";
+
         } catch (error) {
             console.error(error);
             setError("Unable to connect to server");

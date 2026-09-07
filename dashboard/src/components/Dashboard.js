@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 
-import Apps from "./Apps";
 import Funds from "./Funds";
 import Holdings from "./Holdings";
 
@@ -11,13 +10,14 @@ import Summary from "./Summary";
 import WatchList from "./WatchList";
 import { GeneralContextProvider } from "./GeneralContext";
 
+
 const Dashboard = () => {
-  const [checkingAuth, setCheckingAuth] = useState(true);
+    const [checkingAuth, setCheckingAuth] = useState(true);
     const [authenticated, setAuthenticated] = useState(false);
     const [user, setUser] = useState(null);
 
     useEffect(() => {
-        fetch("/auth/check", {
+        fetch("http://localhost:3002/auth/check", {
             credentials: "include",
         })
             .then((res) => {
@@ -27,7 +27,7 @@ const Dashboard = () => {
 
                 return res.json();
             })
-           .then((data) => {
+            .then((data) => {
                 setAuthenticated(data.authenticated);
                 setUser(data.user);
                 setCheckingAuth(false);
@@ -43,7 +43,7 @@ const Dashboard = () => {
     }
 
     if (!authenticated) {
-       window.location.href = "/login";
+        window.location.href = "http://localhost:3000/login";
         return null;
     }
 
