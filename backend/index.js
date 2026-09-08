@@ -26,7 +26,7 @@ app.use(
             const allowedOrigins = [
                 "http://localhost:3000",
                 "http://localhost:3001",
-                "https://master.d3k7u0ong29c6t.amplifyapp.com",
+                "https://nivara-frontend.onrender.com",
             ];
 
             if (!origin || allowedOrigins.includes(origin)) {
