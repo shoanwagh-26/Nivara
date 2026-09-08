@@ -20,20 +20,25 @@ const uri = process.env.MONGO_URL;
 
 const app = express();
 
+const allowedOrigins = [
+    "http://localhost:3000",
+    "http://localhost:3001",
+    "https://nivara-frontend.onrender.com",
+    "https://nivara-dashboard-00ou.onrender.com",
+];
+
 app.use(
     cors({
         origin: function (origin, callback) {
-            const allowedOrigins = [
-                "http://localhost:3000",
-                "http://localhost:3001",
-                "https://nivara-frontend.onrender.com",
-            ];
-
-            if (!origin || allowedOrigins.includes(origin)) {
-                callback(null, true);
-            } else {
-                callback(new Error("Not allowed by CORS"));
+            if (!origin) {
+                return callback(null, true);
             }
+
+            if (allowedOrigins.includes(origin)) {
+                return callback(null, true);
+            }
+
+            return callback(new Error("Not allowed by CORS"));
         },
         credentials: true,
     })
@@ -170,8 +175,9 @@ app.post("/signup", async (req, res) => {
 
         res.cookie("token", token, {
             httpOnly: true,
-            secure: false,
-            sameSite: "lax",
+            secure: true,
+            sameSite: "none",
+            maxAge: 24 * 60 * 60 * 1000,
         });
 
         res.status(200).send("Login successful");
@@ -215,8 +221,8 @@ app.get("/auth/check", async (req, res) => {
 app.post("/logout", (req, res) => {
     res.clearCookie("token", {
         httpOnly: true,
-        secure: false,
-        sameSite: "lax",
+        secure: true,
+        sameSite: "none",
     });
 
     res.status(200).json({ message: "Logged out successfully" });

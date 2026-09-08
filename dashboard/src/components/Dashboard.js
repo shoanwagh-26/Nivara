@@ -43,7 +43,7 @@ const Dashboard = () => {
     }
 
     if (!authenticated) {
-        window.location.href = "https://nivara-frontend.onrender.com/login";
+        window.location.href = "https://nivara-frontend.onrender.com";
         return null;
       }
 
