@@ -30,10 +30,10 @@ function Login() {
             if (!response.ok) {
                 setError(data);
                 return;
-            }
+            }  
 
-            // Login successful
-            window.location.href = "https://nivara-dashboard.onrender.com/";
+            // Login successful https://nivara-dashboard.onrender.com/
+            window.location.href = "https://nivara-dashboard-0o0u.onrender.com";
             
         } catch (error) {
             console.error(error);
