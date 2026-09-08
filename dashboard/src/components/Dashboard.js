@@ -43,9 +43,9 @@ const Dashboard = () => {
     }
 
     if (!authenticated) {
-        window.location.href = "http://localhost:3000/login";
+        window.location.href = "https://nivara-frontend.onrender.com/login";
         return null;
-    }
+      }
 
   return (
     <div className="dashboard-container">
