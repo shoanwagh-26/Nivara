@@ -24,7 +24,7 @@ const allowedOrigins = [
     "http://localhost:3000",
     "http://localhost:3001",
     "https://nivara-frontend.onrender.com",
-    "https://nivara-dashboard-00ou.onrender.com",
+    "https://nivara-dashboard-0o0u.onrender.com",
 ];
 
 app.use(
@@ -38,6 +38,7 @@ app.use(
                 return callback(null, true);
             }
 
+            console.log("Blocked CORS origin:", origin);
             return callback(new Error("Not allowed by CORS"));
         },
         credentials: true,
