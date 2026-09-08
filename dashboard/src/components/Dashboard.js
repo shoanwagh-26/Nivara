@@ -17,7 +17,7 @@ const Dashboard = () => {
     const [user, setUser] = useState(null);
 
     useEffect(() => {
-        fetch("http://localhost:3002/auth/check", {
+        fetch("https://nivara-bbta.onrender.com/auth/check", {
             credentials: "include",
         })
             .then((res) => {

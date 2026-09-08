@@ -13,7 +13,7 @@ function Login() {
         setError("");
 
         try {
-            const response = await fetch("http://localhost:3002/login", {
+            const response = await fetch("https://nivara-bbta.onrender.com/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -33,8 +33,8 @@ function Login() {
             }
 
             // Login successful
-            window.location.href = "http://localhost:3001/";
-
+            window.location.href = "https://nivara-dashboard.onrender.com/";
+            
         } catch (error) {
             console.error(error);
             setError("Unable to connect to server");

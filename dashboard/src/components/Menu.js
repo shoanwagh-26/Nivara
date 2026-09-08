@@ -8,7 +8,7 @@ const Menu = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-      fetch("http://localhost:3002/auth/check", {
+      fetch("https://nivara-bbta.onrender.com/auth/check", {
       credentials: "include"
       })
         .then((res) => res.json())
@@ -32,7 +32,7 @@ const Menu = () => {
 
 const handleLogout = async () => {
     try {
-        await fetch("http://localhost:3002/logout", {
+        await fetch("https://nivara-bbta.onrender.com/logout", {
             method: "POST",
             credentials: "include",
         });

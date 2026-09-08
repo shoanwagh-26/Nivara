@@ -10,7 +10,7 @@ const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
 
 useEffect(() => {
-    axios.get("http://localhost:3002/allHoldings").then((res) => {
+    axios.get("https://nivara-bbta.onrender.com/allHoldings").then((res) => {
 
         const formattedHoldings = res.data.map((stock) => {
 

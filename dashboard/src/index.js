@@ -9,7 +9,7 @@ import axios from "axios";
 import "./index.css";
 import Home from "./components/Home";
 
-axios.defaults.baseURL = "http://localhost:3002";
+axios.defaults.baseURL = "https://nivara-bbta.onrender.com";
 axios.defaults.withCredentials = true;
 
 
