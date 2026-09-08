@@ -24,7 +24,7 @@ const allowedOrigins = [
     "http://localhost:3000",
     "http://localhost:3001",
     "https://nivara-frontend.onrender.com",
-    "https://nivara-dashboard-0o0u.onrender.com",
+    "https://nivara-dashboard-OoOu.onrender.com",
 ];
 
 app.use(
