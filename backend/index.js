@@ -24,26 +24,34 @@ const allowedOrigins = [
     "http://localhost:3000",
     "http://localhost:3001",
     "https://nivara-frontend.onrender.com",
-    "https://nivara-dashboard-OoOu.onrender.com",
+    "https://nivara-dashboard-0o0u.onrender.com",
 ];
 
 app.use(
     cors({
         origin: function (origin, callback) {
-            if (!origin) {
+          if (!origin) {
                 return callback(null, true);
             }
+
+            console.log("CORS DEBUG origin =", JSON.stringify(origin));
+            console.log("CORS DEBUG allowed =", allowedOrigins);
+            console.log(
+                "CORS DEBUG match =",
+                allowedOrigins.includes(origin)
+            );
 
             if (allowedOrigins.includes(origin)) {
+                console.log("CORS ALLOWED");
                 return callback(null, true);
             }
 
-            console.log("Blocked CORS origin:", origin);
+            console.log("CORS BLOCKED");
             return callback(new Error("Not allowed by CORS"));
         },
         credentials: true,
     })
-);
+);   
 
 app.use(bodyParser.json());
 app.use(cookieParser());
