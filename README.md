@@ -8,9 +8,9 @@ Nivara is a full-stack trading platform built around the core loop of retail inv
 
 The project was built to understand how that loop can be represented across a frontend interface, backend APIs, application logic, and persistent data rather than treating a trading platform as a collection of dashboard screens.
 
-## Live Demo
+# Nivara
 
-Coming Soon...
+🌐 [View Live Nivara](https://nivara-frontend.onrender.com)
 
 ## The Core Experience
 
